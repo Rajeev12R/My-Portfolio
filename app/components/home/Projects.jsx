@@ -4,23 +4,11 @@ import { LuGithub, LuExternalLink, LuArrowRight } from "react-icons/lu";
 
 const projectsData = [
     {
-        id: 1,
-        title: "Medicare-AI",
-        description: "AI-powered healthcare platform enabling intelligent patient diagnosis, treatment recommendations, and medical record analysis using advanced machine learning models.",
-        tech: ["Next.js", "TypeScript", "OpenAI", "PostgreSQL", "Stripe"],
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        category: "AI · Healthcare",
-        featured: true,
-        github: "https://github.com/rajeev12r/medicare-ai",
-        demo: "#",
-        gradient: "from-cyan-500/20 to-blue-500/20"
-    },
-    {
         id: 2,
         title: "Converge-X",
         description: "Real-time collaboration system with video conferencing, whiteboard, and synchronized document editing for distributed teams.",
         tech: ["React", "WebSockets", "Socket.io", "MongoDB", "WebRTC"],
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        videoUrl: "/Rajeev Ranjan_s Video - Feb 14, 2026.mp4",
         category: "Web · Real-time",
         github: "https://github.com/rajeev12r/converge-x",
         demo: "#",
@@ -31,11 +19,23 @@ const projectsData = [
         title: "Resume-AI",
         description: "Smart resume analysis engine that provides AI-driven feedback, ATS optimization, and personalized improvement suggestions.",
         tech: ["TypeScript", "Gemini AI", "Next.js", "Tailwind"],
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        videoUrl: "/Resume_Score_Checker.mp4",
         category: "AI · SaaS",
-        github: "https://github.com/rajeev12r/resume-ai",
-        demo: "#",
+        github: "https://github.com/Rajeev12R/Resume-Score-Checker",
+        demo: "https://resume-ai-score-checker.vercel.app/",
         gradient: "from-green-500/20 to-emerald-500/20"
+    },
+    {
+        id: 1,
+        title: "Medicare-AI",
+        description: "AI-powered healthcare platform enabling intelligent patient diagnosis, treatment recommendations, and medical record analysis using advanced machine learning models.",
+        tech: ["Next.js", "TypeScript", "OpenAI", "PostgreSQL", "Stripe"],
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        category: "AI · Healthcare",
+        featured: true,
+        github: "https://github.com/rajeev12r/medicare-ai",
+        demo: "#",
+        gradient: "from-cyan-500/20 to-blue-500/20"
     },
     {
         id: 4,
