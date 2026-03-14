@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const links = ["Home", "About", "Projects"];
+const links = ["Home", "About", "Projects", "Certifications"];
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
@@ -11,7 +11,8 @@ const Navbar = () => {
     const sectionMap = {
       "Home": "home",
       "About": "about",
-      "Projects": "projects"
+      "Projects": "projects",
+      "Certifications": "certifications"
     };
 
     const sectionId = sectionMap[link];

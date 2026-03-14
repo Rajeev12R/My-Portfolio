@@ -7,6 +7,7 @@ import Landing from "./components/home/Landing";
 import Features from "./components/home/Features";
 import Projects from "./components/home/Projects";
 import About from "./components/home/About";
+import Certifications from "./components/home/Certifications";
 import Contact from "./components/home/Contact";
 import Footer from "./components/home/Footer";
 
@@ -41,6 +42,7 @@ const Page = () => {
         <Features />
         <Projects />
         <About />
+        <Certifications />
         <Contact />
         <Footer />
       </div>

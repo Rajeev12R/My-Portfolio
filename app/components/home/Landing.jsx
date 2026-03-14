@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import { LuGithub } from "react-icons/lu";
+import { SiLeetcode } from "react-icons/si";
 
 const Landing = () => {
     return (
@@ -89,8 +91,13 @@ const Landing = () => {
                             className="w-full h-full object-cover  transition duration-500"
                         />
                     </div>
-                    <Link href="https://github.com/rajeev12r" className="absolute -bottom-10 right-6 px-4 py-2 rounded-lg bg-black/80 border border-white/20 font-mono text-xs text-cyan-400 hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300">
-                        &gt; view_github()
+                    <Link href="https://leetcode.com/u/Rajeev12R/" target="_blank" className="absolute -bottom-4 left-0 md:-bottom-2 md:left-4 lg:-bottom-6 lg:left-10 px-4 py-2 flex items-center gap-2 rounded-full bg-black/80 border border-white/20 text-yellow-500 hover:text-black hover:bg-yellow-500 hover:border-yellow-500 hover:shadow-[0_0_20px_rgba(234,179,8,0.5)] transition-all duration-300 z-20 group" aria-label="LeetCode Profile">
+                        <SiLeetcode className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                        <span className="font-mono text-xs font-semibold uppercase tracking-wider">LeetCode</span>
+                    </Link>
+                    <Link href="https://github.com/rajeev12r" target="_blank" className="absolute -bottom-10 right-6 md:-bottom-8 md:right-8 lg:-bottom-10 lg:right-12 px-4 py-2 flex items-center gap-2 rounded-full bg-black/80 border border-white/20 text-cyan-400 hover:text-black hover:bg-cyan-400 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300 z-20 group" aria-label="GitHub Profile">
+                        <LuGithub className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                        <span className="font-mono text-xs font-semibold uppercase tracking-wider">GitHub</span>
                     </Link>
                 </div>
 
