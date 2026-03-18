@@ -12,6 +12,7 @@ const SpatialEducationCard = ({ edu, idx, isLast }) => {
 
     const handleMouseMove = (e) => {
         if (!cardRef.current) return;
+        if (window.matchMedia && window.matchMedia("(pointer: coarse)").matches) return;
         const rect = cardRef.current.getBoundingClientRect();
         setMousePosition({
             x: e.clientX - rect.left,

@@ -33,7 +33,7 @@ const Page = () => {
 
       {/* Main content - rendered during loading but hidden */}
       <div
-        className={`w-full min-h-screen bg-black text-white flex flex-col transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'
+        className={`w-full  overflow-x-hidden min-h-screen bg-black text-white flex flex-col transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'
           }`}
       >
         <div className="h-24" />
