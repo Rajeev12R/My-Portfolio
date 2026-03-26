@@ -25,24 +25,23 @@ const projectsData = [
         demo: "https://resume-ai-score-checker.vercel.app/",
         gradient: "from-green-500/20 to-emerald-500/20"
     },
-    {
-        id: 1,
-        title: "Medicare-AI",
-        description: "AI-powered healthcare platform enabling intelligent patient diagnosis, treatment recommendations, and medical record analysis using advanced machine learning models.",
-        tech: ["Next.js", "TypeScript", "OpenAI", "PostgreSQL", "Stripe"],
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        category: "AI · Healthcare",
-        featured: true,
-        github: "https://github.com/rajeev12r/medicare-ai",
-        demo: "#",
-        gradient: "from-cyan-500/20 to-blue-500/20"
+        {
+        id: 7,
+        title: "ChessReal",
+        description: "Real-time multiplayer chess platform with instant move synchronization, live game state updates, and seamless cross-device experience using PWA architecture. Built from scratch to ensure low-latency gameplay and reliable socket communication.",
+        tech: ["Node.js", "Express", "EJS", "Socket.io", "PWA"],
+        videoUrl: "/chess.mp4",
+        category: "Web · Real-time · Game",
+        github: "https://github.com/Rajeev12R/chess",
+        demo: "https://lnkd.in/gmvFvSTq",
+        gradient: "from-gray-700/20 to-zinc-900/20"
     },
     {
         id: 4,
         title: "LegalDoc-AI",
         description: "Automated legal document parsing and analysis tool using NLP to extract key clauses, identify risks, and generate summaries.",
         tech: ["JavaScript", "Python", "NLP", "Express", "MongoDB"],
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        videoUrl: "/legal-doc.mp4",
         category: "AI · Automation",
         github: "https://github.com/rajeev12r/legaldoc-ai",
         demo: "#",
