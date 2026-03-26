@@ -12,7 +12,7 @@ const achievementsData = [
         date: "Jan 2026",
         description: "Validated expertise in Oracle Cloud AI services, machine learning fundamentals, and AI/ML implementation strategies on cloud infrastructure.",
         icon: LuAward,
-        link: "#",
+        link: "https://drive.google.com/file/d/130zxIOZ5MONX7RsGLQF-V7MjAZZQ8SeY/view?usp=sharing",
         gradient: "from-red-500/20 via-orange-500/10 to-transparent",
         glow: "shadow-[0_0_40px_rgba(239,68,68,0.3)]",
         border: "border-red-500/50",
@@ -40,7 +40,7 @@ const achievementsData = [
         date: "Jan 2026",
         description: "Demonstrated comprehensive understanding of Oracle Cloud architecture, core services, security, and pricing models for enterprise cloud solutions.",
         icon: LuCloud,
-        link: "#",
+        link: "https://drive.google.com/file/d/1Q0mCU5O2uAcOfI_Xj0-2mA0cr5siXj61/view?usp=sharing",
         gradient: "from-red-500/20 via-orange-500/10 to-transparent",
         glow: "shadow-[0_0_40px_rgba(239,68,68,0.3)]",
         border: "border-red-500/50",
@@ -284,17 +284,19 @@ const Certifications = () => {
                                 </p>
                             </div>
 
-                            <div className="mt-12 animate-slideFadeUp" style={{ animationDelay: '100ms' }}>
-                                <Link
-                                    href={activeData.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`inline-flex items-center gap-3 px-8 py-4 rounded-full ${activeData.bg} border ${activeData.border} ${activeData.text} hover:bg-white/10 hover:text-white transition-all duration-300 font-semibold text-sm group/btn backdrop-blur-md shadow-lg`}
-                                >
-                                    <span>Verify Credential</span>
-                                    <LuExternalLink className="w-5 h-5 group-hover/btn:scale-110 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5 transition-transform" />
-                                </Link>
-                            </div>
+                            {activeData.link !== "#" && (
+                                <div className="mt-12 animate-slideFadeUp" style={{ animationDelay: '100ms' }}>
+                                    <Link
+                                        href={activeData.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`inline-flex items-center gap-3 px-8 py-4 rounded-full ${activeData.bg} border ${activeData.border} ${activeData.text} hover:bg-white/10 hover:text-white transition-all duration-300 font-semibold text-sm group/btn backdrop-blur-md shadow-lg`}
+                                    >
+                                        <span>Show Credential</span>
+                                        <LuExternalLink className="w-5 h-5 group-hover/btn:scale-110 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5 transition-transform" />
+                                    </Link>
+                                </div>
+                            )}
                         </div>
                     </div>
 
