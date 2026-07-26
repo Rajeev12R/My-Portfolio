@@ -1,63 +1,64 @@
 import React from "react";
 import Link from "next/link";
-import { LuGithub } from "react-icons/lu";
+import { LuGithub, LuLinkedin, LuMail } from "react-icons/lu";
 import { SiLeetcode } from "react-icons/si";
+import { motion } from "framer-motion";
+
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    },
+};
+
+const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+};
 
 const Landing = () => {
     return (
-        <section id="home" className="relative w-full min-h-[calc(100vh-96px)] bg-black text-white overflow-hidden">
+        <section id="home" className="relative w-full min-h-dvh bg-white dark:bg-black text-zinc-900 dark:text-zinc-100 overflow-hidden flex items-center justify-center pt-1 pb-12 transition-colors duration-300">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.04)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.04)_0%,transparent_70%)] opacity-100 dark:opacity-50 transition-colors duration-300" />
 
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[40px_40px] opacity-20" />
+            <div className="relative max-w-4xl mx-auto px-6 md:px-10 flex flex-col items-center text-center w-full">
 
-            <div className="relative max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center min-h-[calc(100vh-96px)] py-12 md:py-0">
-
-                <div className="space-y-8">
-
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur">
-                        <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                        <p className="text-xs tracking-widest uppercase text-white/80">
-                            Building Production Systems
+                <motion.div
+                    className="space-y-8 flex flex-col items-center"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-200 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-900/50 backdrop-blur-sm transition-colors duration-300">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        <p className="text-xs font-mono tracking-widest uppercase text-zinc-500 dark:text-zinc-400">
+                            Available for Freelance & Internships
                         </p>
-                    </div>
+                    </motion.div>
 
-                    <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
-                        Engineering <span className="gradient-text">Production-Grade</span>
-                        <br />
-                        Web & AI Systems
-                    </h1>
+                    <motion.h1 variants={itemVariants} className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight">
+                        Rajeev Ranjan
+                    </motion.h1>
 
-                    <p className="text-white/70 text-lg max-w-xl leading-relaxed">
-                        I’m <span className="text-white font-semibold">Rajeev Ranjan</span>,
-                        a Full Stack Developer and AI Engineer focused on building
-                        <span className="text-white"> scalable, secure, and real-time systems</span>.
-                        From AI healthcare platforms to immersive virtual environments,
-                        I design products that survive real users—not demos.
-                    </p>
+                    <motion.h2 variants={itemVariants} className="text-2xl sm:text-3xl md:text-4xl text-zinc-600 dark:text-zinc-400 font-medium tracking-tight transition-colors duration-300">
+                        Full Stack Developer <span className="text-zinc-400 dark:text-zinc-600">&</span> AI Engineer
+                    </motion.h2>
 
-                    <div className="flex flex-wrap gap-3 text-sm font-mono text-white/70">
-                        {[
-                            "Next.js",
-                            "MERN",
-                            "GenAI",
-                            "AgenticAI",
-                            "WebSockets",
-                            "PostgreSQL",
-                            "MongoDB",
-                            "Docker",
-                            "C++",
-                            "Python"
-                        ].map((tech) => (
-                            <span
-                                key={tech}
-                                className="px-3 py-1 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 transition"
-                            >
+                    <motion.p variants={itemVariants} className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed font-light transition-colors duration-300">
+                        I engineer high-performance web applications using the <span className="text-zinc-900 dark:text-zinc-100 font-medium">MERN stack</span>, <span className="text-zinc-900 dark:text-zinc-100 font-medium">Next.js</span>, and <span className="text-zinc-900 dark:text-zinc-100 font-medium">WebSockets</span>. Specializing in real-time systems and intelligent <span className="text-zinc-900 dark:text-zinc-100 font-medium">AI/LLM integrations</span> that drive measurable impact.
+                    </motion.p>
+
+                    <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-2 text-xs font-mono text-zinc-600 dark:text-zinc-500 pt-2 max-w-2xl">
+                        {["React", "Next.js", "Node.js", "TypeScript", "Socket.io", "WebRTC", "PostgreSQL", "MongoDB", "Gemini AI"].map((tech) => (
+                            <span key={tech} className="px-3 py-1.5 rounded-md bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800/30 transition-colors duration-300">
                                 {tech}
                             </span>
                         ))}
-                        <span className="mt-2 text-cyan-500">etc..</span>
-                    </div>
+                    </motion.div>
 
-                    <div className="flex gap-4 pt-4">
+                    <motion.div variants={itemVariants} className="flex flex-wrap justify-center items-center gap-4 pt-6">
                         <button
                             onClick={() => {
                                 const element = document.getElementById("projects");
@@ -65,42 +66,36 @@ const Landing = () => {
                                     element.scrollIntoView({ behavior: "smooth", block: "start" });
                                 }
                             }}
-                            className="px-6 py-3 rounded-full bg-linear-to-r from-cyan-500 to-blue-500 text-black font-semibold hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:scale-105"
+                            className="px-8 py-3.5 rounded-full bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-950 font-bold hover:bg-zinc-800 dark:hover:bg-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
                         >
-                            View Work
+                            View Projects
                         </button>
 
                         <Link
                             href="/Resume.pdf"
                             download
-                            className="px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 hover:border-cyan-400/50 transition-all duration-300 inline-flex items-center justify-center hover:shadow-lg hover:shadow-cyan-500/20 hover:scale-105"
+                            className="px-8 py-3.5 rounded-full border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-50 dark:hover:bg-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 transition-all duration-300 inline-flex items-center justify-center font-medium"
                         >
-                            Resume
+                            Download Resume
                         </Link>
-                    </div>
-                </div>
+                    </motion.div>
 
-                <div className="relative flex justify-center items-center">
+                    <motion.div variants={itemVariants} className="flex items-center gap-6 pt-8 text-zinc-500 dark:text-zinc-400">
+                        <Link href="https://github.com/rajeev12r" target="_blank" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
+                            <LuGithub className="w-5 h-5" />
+                        </Link>
+                        <Link href="https://linkedin.com/in/rejeev12r" target="_blank" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
+                            <LuLinkedin className="w-5 h-5" />
+                        </Link>
+                        <Link href="https://leetcode.com/u/Rajeev12R/" target="_blank" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
+                            <SiLeetcode className="w-5 h-5" />
+                        </Link>
+                        <Link href="mailto:rjranjan2112@gmail.com" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
+                            <LuMail className="w-5 h-5" />
+                        </Link>
+                    </motion.div>
 
-                    <div className="absolute w-[420px] h-[420px] rounded-full border border-cyan-500/30 blur-xl" />
-
-                    <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-full overflow-hidden border border-white/20 bg-white/5 backdrop-blur-xl animate-pulse-glow">
-                        <img
-                            src="/me.png"
-                            alt="Rajeev Ranjan"
-                            className="w-full h-full object-cover  transition duration-500"
-                        />
-                    </div>
-                    <Link href="https://leetcode.com/u/Rajeev12R/" target="_blank" className="absolute -bottom-2 sm:-bottom-4 left-4 sm:left-0 md:-bottom-2 md:left-4 lg:-bottom-6 lg:left-10 px-3 py-1.5 md:px-4 md:py-2 flex items-center gap-2 rounded-full bg-black/80 border border-white/20 text-yellow-500 hover:text-black hover:bg-yellow-500 hover:border-yellow-500 hover:shadow-[0_0_20px_rgba(234,179,8,0.5)] transition-all duration-300 z-20 group" aria-label="LeetCode Profile">
-                        <SiLeetcode className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                        <span className="font-mono text-xs font-semibold uppercase tracking-wider">LeetCode</span>
-                    </Link>
-                    <Link href="https://github.com/rajeev12r" target="_blank" className="absolute -bottom-8 right-0 sm:-bottom-10 sm:right-6 md:-bottom-8 md:right-8 lg:-bottom-10 lg:right-12 px-3 py-1.5 md:px-4 md:py-2 flex items-center gap-2 rounded-full bg-black/80 border border-white/20 text-cyan-400 hover:text-black hover:bg-cyan-400 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.5)] transition-all duration-300 z-20 group" aria-label="GitHub Profile">
-                        <LuGithub className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                        <span className="font-mono text-xs font-semibold uppercase tracking-wider">GitHub</span>
-                    </Link>
-                </div>
-
+                </motion.div>
             </div>
         </section>
     );
