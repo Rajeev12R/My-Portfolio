@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { background: #333; display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; }
+    .box { width: 400px; height: 400px; border: 1px solid red; position: relative; }
+    
+    /* Attempt 9: Concave corners */
+    .pattern9 {
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 10 0 A 10 10 0 0 0 0 10 L 0 70 A 10 10 0 0 0 10 80 L 70 80 A 10 10 0 0 0 80 70 L 80 10 A 10 10 0 0 0 70 0 Z' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+    }
+
+    /* Attempt 10: Missing corners (Cross grid) */
+    .pattern10 {
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 40 0 V 30 M 40 50 V 80 M 0 40 H 30 M 50 40 H 80' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+    }
+
+    /* Attempt 11: Interlocking tetris/masonry */
+    .pattern11 {
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0 40 H 40 V 80 H 80 V 0 H 40' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+    }
+  </style>
+</head>
+<body>
+  <div class="box pattern9"></div>
+  <div class="box pattern10"></div>
+  <div class="box pattern11"></div>
+</body>
+</html>

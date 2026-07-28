@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { background: #333; display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; }
+    .box { width: 300px; height: 300px; border: 1px solid red; }
+    
+    /* Attempt 1: Incomplete squares (path) */
+    .pattern1 {
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 10,40 Q 10,10 40,10 Q 70,10 70,40' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+    }
+    
+    /* Attempt 2: Squares with random gaps */
+    .pattern2 {
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20,4 V 20 A 4,4 0 0,0 24,24 H 40 M 60,76 V 60 A 4,4 0 0,0 56,56 H 40' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+    }
+
+    /* Attempt 3: Crosses with rounded corners */
+    .pattern3 {
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0,20 Q 20,20 20,0 M 80,20 Q 60,20 60,0 M 0,60 Q 20,60 20,80 M 80,60 Q 60,60 60,80' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+    }
+    
+    /* Attempt 4: Offset grid with rounded corners forming squiggly lines */
+    .pattern4 {
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0 40 Q 40 40 40 80 M 40 0 Q 40 40 80 40' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+    }
+  </style>
+</head>
+<body>
+  <div class="box pattern1"></div>
+  <div class="box pattern2"></div>
+  <div class="box pattern3"></div>
+  <div class="box pattern4"></div>
+</body>
+</html>

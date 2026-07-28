@@ -5,6 +5,53 @@ import { SiLeetcode } from "react-icons/si";
 import { motion } from "framer-motion";
 
 
+const glossyCells = new Set([
+    // Left cluster (diamond lattice pattern)
+    "5,3",
+    "4,4",
+    "5,5",
+    "4,6",
+    "5,7",
+    "4,8",
+
+    // Right cluster (mirrored diamond lattice pattern)
+    "19,2",
+    "18,3", "20,3",
+    "19,4",
+    "18,5", "20,5",
+    "19,6",
+    "18,7", "20,7",
+    "19,8"
+]);
+
+const BackgroundGrid = () => {
+    return (
+        <div className="absolute inset-0 flex justify-center items-center overflow-hidden pointer-events-none z-0">
+            <div
+                className="w-600 h-350 grid grid-cols-[repeat(24,100px)] grid-rows-[repeat(14,100px)] opacity-70 dark:opacity-80"
+                style={{
+                    maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)',
+                    WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)'
+                }}
+            >
+                {Array.from({ length: 336 }).map((_, i) => {
+                    const x = i % 24;
+                    const y = Math.floor(i / 24);
+                    const isGlossy = glossyCells.has(`${x},${y}`);
+
+                    return (
+                        <div key={i} className="relative border-r border-b border-black/8 dark:border-white/5">
+                            {isGlossy && (
+                                <div className="absolute -top-px -left-px -right-px -bottom-px rounded-[24px] border border-white/60 border-t-white border-l-white bg-white/20 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.1),inset_0_0_20px_rgba(255,255,255,0.6)] backdrop-blur-md dark:border-white/10 dark:border-t-white/30 dark:border-l-white/30 dark:bg-white/5 dark:shadow-[inset_0_0_20px_rgba(255,255,255,0.05)] z-10" />
+                            )}
+                        </div>
+                    );
+                })}
+            </div>
+        </div>
+    );
+};
+
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -21,7 +68,14 @@ const itemVariants = {
 const Landing = () => {
     return (
         <section id="home" className="relative w-full min-h-dvh bg-white dark:bg-black text-zinc-900 dark:text-zinc-100 overflow-hidden flex items-center justify-center pt-1 pb-12 transition-colors duration-300">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.04)_0%,transparent_70%)] dark:bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.04)_0%,transparent_70%)] opacity-100 dark:opacity-50 transition-colors duration-300" />
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] rounded-full bg-orange-300/50 dark:bg-orange-900/20 blur-[100px] dark:blur-[120px]" />
+                <div className="absolute top-[20%] -right-[10%] w-[45%] h-[55%] rounded-full bg-purple-300/50 dark:bg-purple-900/20 blur-[100px] dark:blur-[120px]" />
+                <div className="absolute -bottom-[10%] -left-[10%] w-[50%] h-[50%] rounded-full bg-blue-300/50 dark:bg-blue-900/20 blur-[100px] dark:blur-[120px]" />
+                <div className="absolute bottom-[10%] right-[20%] w-[30%] h-[40%] rounded-full bg-emerald-300/50 dark:bg-emerald-900/20 blur-[100px] dark:blur-[120px]" />
+
+                <BackgroundGrid />
+            </div>
 
             <div className="relative max-w-4xl mx-auto px-6 md:px-10 flex flex-col items-center text-center w-full">
 

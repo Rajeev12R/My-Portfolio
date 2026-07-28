@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { background: #333; margin: 0; height: 100vh; overflow: hidden; }
+    
+    .pattern-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      /* Full glossy grid pattern */
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 80 0 L 0 0 0 80' fill='none' stroke='rgba(255,255,255,0.2)' stroke-width='1'/%3E%3Crect x='0' y='0' width='80' height='80' rx='20' fill='rgba(255,255,255,0.05)' stroke='rgba(255,255,255,0.5)' stroke-width='1.5'/%3E%3C/svg%3E");
+      
+      /* Mask: Transparent in center (where text goes), Black (visible) on the edges */
+      mask-image: radial-gradient(ellipse at center, transparent 30%, black 70%);
+      -webkit-mask-image: radial-gradient(ellipse at center, transparent 30%, black 70%);
+    }
+  </style>
+</head>
+<body>
+  <div class="pattern-overlay"></div>
+  <h1 style="color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">HERO TEXT</h1>
+</body>
+</html>
