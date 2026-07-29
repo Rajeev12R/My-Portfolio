@@ -5,6 +5,20 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const projectsData = [
   {
+    id: 1,
+    title: "Investment AI",
+    role: "AI Engineer",
+    timeline: "2026",
+    problem: "Replicating professional investment due diligence requires significant time, manual effort, and synthesizing data across multiple disparate sources.",
+    solution: "Built an AI-powered Investment Research Agent using an agentic workflow that gathers structured evidence, analyzes financials and risks, and synthesizes findings into an explainable report.",
+    outcome: "Streamlined the investment research workflow, providing a comprehensive analysis framework that mimics a junior investment analyst.",
+    tech: ["AI Agents", "LLMs", "Data Analysis", "Finance"],
+    videoUrl: "/InvestmentAI.mp4",
+    category: "AI · Finance",
+    github: "https://github.com/Rajeev12R/InvestmentAI",
+    demo: "https://investment-ai-gray.vercel.app/",
+  },
+  {
     id: 2,
     title: "Converge-X",
     role: "Full Stack Engineer",
@@ -16,7 +30,7 @@ const projectsData = [
     videoUrl: "/Rajeev Ranjan_s Video - Feb 14, 2026.mp4",
     category: "Real-time Infrastructure",
     github: "https://github.com/rajeev12r/converge-x",
-    demo: "#",
+    demo: "https://drive.google.com/file/d/1K33Sa344Q0UoqBOUKKsNDaRsB8oaT2ja/view",
   },
   {
     id: 3,
@@ -63,12 +77,10 @@ const projectsData = [
 ];
 
 const Projects = () => {
-  const [activeVideo, setActiveVideo] = useState(null);
-
   return (
     <section id="projects" className="w-full bg-white dark:bg-black px-6 py-24 text-zinc-900 dark:text-zinc-100 overflow-hidden relative border-t border-zinc-200 dark:border-zinc-900/50 transition-colors duration-300">
       <div className="max-w-5xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -100,7 +112,7 @@ const Projects = () => {
               className="group relative"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
-                
+
                 {/* Content Side */}
                 <div className="lg:col-span-6 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-4 text-xs font-mono text-zinc-500">
@@ -108,7 +120,7 @@ const Projects = () => {
                     <span className="w-4 h-px bg-zinc-300 dark:bg-zinc-800 transition-colors duration-300" />
                     <span className="uppercase tracking-widest">{project.category}</span>
                   </div>
-                  
+
                   <h3 className="text-3xl md:text-4xl font-bold mb-8 text-zinc-900 dark:text-zinc-100 group-hover:text-black dark:group-hover:text-white transition-colors duration-300">
                     {project.title}
                   </h3>
@@ -148,7 +160,7 @@ const Projects = () => {
                       <LuGithub className="w-4 h-4" />
                       <span>Source Code</span>
                     </Link>
-                    
+
                     {project.demo !== "#" && (
                       <Link
                         href={project.demo}
@@ -165,26 +177,13 @@ const Projects = () => {
                 {/* Media Side */}
                 <div className="lg:col-span-6 flex items-center justify-center">
                   <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 group-hover:border-zinc-300 dark:group-hover:border-zinc-700 transition-colors duration-500">
-                    {activeVideo === project.id ? (
-                      <iframe
-                        className="absolute inset-0 w-full h-full"
-                        src={project.videoUrl}
-                        title={`${project.title} Demo`}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                        <button
-                          onClick={() => setActiveVideo(project.id)}
-                          className="w-16 h-16 rounded-full bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm border border-zinc-200 dark:border-zinc-700 flex items-center justify-center hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:scale-110 transition-all duration-300 text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white mb-4 group/play"
-                        >
-                          <LuPlay className="w-6 h-6 ml-1 group-hover/play:scale-110 transition-transform" />
-                        </button>
-                        <p className="text-sm text-zinc-500 font-mono">Play Demo Video</p>
-                      </div>
-                    )}
+                    <video
+                      className="absolute inset-0 w-full h-full object-cover"
+                      src={project.videoUrl}
+                      controls
+                      preload="metadata"
+                      title={`${project.title} Demo`}
+                    />
                   </div>
                 </div>
               </div>
@@ -192,7 +191,7 @@ const Projects = () => {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
